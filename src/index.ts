@@ -21,3 +21,21 @@ const myName: string = 'Bogdan'; // variabila constanta de tip string
 
 // tsc --watch pentru a pornit compilarea in modul watch
 // de fiecare data cand dam save intr-un fisier de ts se recompileaza codul
+
+// * PRIMITIVE
+// string --> insiruirea de caractere
+const name1: string = 'Alex';
+// number --> inglobeaza toate tipurile de numere (intregi, cu virgula, etc.)
+const age1: number = 25;
+// boolean --> true sau false
+const isMinor: boolean = false;
+
+// * COLECTII FORMATE CU TIPURILE PRIMITIVE
+// array
+const people: string[] = ['Alex', 'Mihai', 'Bogdan'];
+// tuplu (tuple) --> se stie exact lungimea, tipul datelor si ordinea acestora
+const tuple: [string, number, boolean] = ['Bogdan', 10, true];
+
+// * TIPUL ANY
+let t: any = [1, 'test', false]; // un array cu diverse tipuri
+t = 1; // acum are doar valoarea 1
