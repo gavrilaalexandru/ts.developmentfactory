@@ -9,3 +9,8 @@ const myName: string = 'Bogdan'; // variabila constanta de tip string
 // valid de js
 
 // tot codul de js este cod valid de ts
+
+// tsc --init pentru tsconfig.json
+// acum in loc sa compilam fiecare fisier pe rand
+// putem scrie doar "tsc" si va compila toate fisierele
+// din proiectul in care se afla tsconfig.json
