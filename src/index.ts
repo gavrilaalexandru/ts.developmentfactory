@@ -13,4 +13,11 @@ const myName: string = 'Bogdan'; // variabila constanta de tip string
 // tsc --init pentru tsconfig.json
 // acum in loc sa compilam fiecare fisier pe rand
 // putem scrie doar "tsc" si va compila toate fisierele
-// din proiectul in care se afla tsconfig.json
+// din proiectul in care se afla tsconfig.json (configurarea default)
+
+// putem schimba acest lucru modificand setarea "rootDir"
+// de asemenea putem selecta si directorul unde se duc fisierele in urma compilarii
+// setarea "outDir"; se obicei un folder numit "dist" (distribution)
+
+// tsc --watch pentru a pornit compilarea in modul watch
+// de fiecare data cand dam save intr-un fisier de ts se recompileaza codul
