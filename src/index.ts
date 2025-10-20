@@ -71,3 +71,55 @@ displayName('Bogdan');
 // fisierul .map mapeaza fisierul de javascript la fisierul de typescript
 // --> din launch.json la "program" schimbam din src/index.ts in dist/index.js
 // F5 --> start debugging
+
+// * FUNCTII
+
+function displayFullName(firstName: string, lastName: string): string {
+  const fullName = `${firstName} ${lastName}`;
+  console.log(fullName);
+  return fullName;
+}
+
+displayFullName('Test', 'test');
+
+// si functiile reprezinta un tip in typescript deci putem declara o
+// variabila ca fiind o referinta catre o functie
+
+let myFunc: (firstName: string, lastName: string) => string;
+
+myFunc = displayFullName;
+myFunc('Ion', 'Popescu');
+
+// * OBIECTE
+
+const person = {
+  // o structura de mai multe tipuri
+  firstName: 'Alex',
+  lastName: 'Petre',
+  age: 30,
+};
+
+function displayPerson(person: { firstName: string; lastName: string }) {
+  console.log(`${person.firstName} ${person.lastName}`);
+}
+
+// incorect displayPerson('Test');
+// incorect displayPerson('Test', 'test');
+displayPerson(person); // campurile din person respecta structura din functia noastra
+// dar putem adauga un camp nou, pe care nu il putem accesa in functia noastra
+
+const person2: { firstName: string; lastName: string; age: number } = {
+  firstName: 'Alexandru',
+  lastName: 'Test',
+  age: 30,
+};
+
+function displayPerson2(person: {
+  firstName: string;
+  lastName: string;
+  age: number;
+}) {
+  console.log(`${person.firstName} ${person.lastName}`);
+}
+
+displayPerson2(person2);
