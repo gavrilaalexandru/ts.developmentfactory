@@ -158,7 +158,7 @@ type Masina = {
   manufacturer: string;
   model: string;
   horsePower: number;
-  color?: string; // campul optional
+  color?: string | undefined; // campul optional string sau undefined (optional de pus undefined)
 };
 
 const masina2: Masina = {
@@ -167,3 +167,20 @@ const masina2: Masina = {
   horsePower: 350,
   // merge si fara campul optional (culoare)
 };
+
+// * TIPURI UNIFICATE
+// daca facem o proprietate optionala, aceasta poate fi de tipul declarat sau undefined
+// string | undefined --> union type (daca avem camp optional se face by default)
+// dar putem face si noi acelasi lucru si pentru campuri care nu sunt necesar optionale
+
+let input: number | string = 13;
+input = 'megaBIGnumber';
+
+function print(input: number | string) {
+  if (typeof input == 'string') {
+    console.log(input.toLowerCase());
+  } else {
+    console.log(input);
+  }
+}
+print(input);
