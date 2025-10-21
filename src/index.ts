@@ -184,3 +184,36 @@ function print(input: number | string) {
   }
 }
 print(input);
+
+// * INTERFETE
+// se recomanda utilizarea interfetelor, nu a tipurilor
+// cea mai mare diferenta este ca o interfata poate fi extinsa foarte usor
+
+interface Company {
+  // fara egal, doar acolade
+  name: string;
+  employees: number;
+}
+
+interface InternationalCompany extends Company {
+  country: string;
+}
+
+const myCompany: Company = {
+  name: 'My Company',
+  employees: 10000,
+};
+
+const myInternationalCompany: InternationalCompany = {
+  // putem face acelasi lucru si cu types, dar trebuie sa folosim intersections
+  name: 'My International Company',
+  employees: 25000,
+  country: 'USA',
+};
+
+// extindem tipul masina
+type MasinaElectrica = Masina & {
+  // procesul de intersection
+  isElectric: boolean;
+  batteryLife: number;
+};
