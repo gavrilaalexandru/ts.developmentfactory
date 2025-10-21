@@ -232,3 +232,33 @@ function getCompany(): Company {
 
 const companie = getCompany() as InternationalCompany; // un fel de cast; trebuie sa se suprapuna
 console.log(companie);
+
+// * TIPURI LITERALE (literal types)
+
+type something = string | number; // string mascat; putem face si union types
+const someValue: something = 13;
+if (typeof someValue === 'string') {
+  console.log('the variable someValue is string');
+}
+
+type literalType = 'fixedValue'; // nu este un string mascat; ci este un literal type; tipuri absolut custom cu absolut orice valori
+const anotherValue: literalType = 'fixedValue'; // in spate este un literal type de tipul string
+
+function displayTheLiteralType(input: literalType) {
+  console.log(input);
+}
+
+displayTheLiteralType('fixedValue');
+// displayTheLiteralType('un string lung'); Argument of type '"un string lung"' is not assignable to parameter of type '"fixedValue"'.ts(2345)
+
+function configure(one: 'one', y: 'two') {
+  // does something
+}
+
+const configuration = {
+  one: 'one',
+  two: 'two',
+};
+
+// configure(configuration.one, configuration.two);
+configure(configuration.one as 'one', configuration.two as 'two');
