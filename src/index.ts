@@ -217,3 +217,18 @@ type MasinaElectrica = Masina & {
   isElectric: boolean;
   batteryLife: number;
 };
+
+// * ASERTIUNI DE TIPURI
+
+function getCompany(): Company {
+  // return type de tip company, dar noi returnam un international company
+  const myCompany: InternationalCompany = {
+    name: 'My Fancy Company',
+    employees: 5000,
+    country: 'Romania',
+  };
+  return myCompany;
+}
+
+const companie = getCompany() as InternationalCompany; // un fel de cast; trebuie sa se suprapuna
+console.log(companie);
