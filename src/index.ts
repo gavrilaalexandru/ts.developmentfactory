@@ -262,3 +262,25 @@ const configuration = {
 
 // configure(configuration.one, configuration.two);
 configure(configuration.one as 'one', configuration.two as 'two');
+
+// * ENUMERATII
+// const GASOLINE = 'Gasoline';
+// const DIESEL = 'Diesel'; solutia din JS
+
+enum Fuel {
+  GASOLINE = 'Gasoline',
+  DIESEL = 'Diesel',
+  LPG = 'LPG',
+}
+
+function startEngine(fuel: Fuel) {
+  // in loc sa luam string luam Fuel
+  if (fuel === Fuel.LPG) {
+    // throw Error("Engine doesn't work with LPG");
+  }
+  console.log(`Engine has been started using ${fuel}`); // sunt index based (adica apar ca si 0 si 1 daca nu le modificam in enum)
+}
+
+startEngine(Fuel.GASOLINE);
+startEngine(Fuel.DIESEL);
+startEngine(Fuel.LPG);
