@@ -126,12 +126,12 @@ displayPerson2(person2);
 
 // * ALIASURI
 
-type Masina = {
-  // type alias pt structura masina
-  manufacturer: string;
-  model: string;
-  horsePower: number;
-}; // cand se declara tipul folosim majuscula
+// type Masina = {
+// type alias pt structura masina
+//   manufacturer: string;
+//   model: string;
+//   horsePower: number;
+// }; // cand se declara tipul folosim majuscula
 // am creat tipul custom "Masina"
 
 const masina1: Masina = {
@@ -149,3 +149,21 @@ function displayCar(masina: Masina) {
 }
 
 displayCar(masina1);
+
+// * CAMPURI OPTIONALE
+// sa zicem ca ne dorim sa avem si culoarea masinii, dar nu vrem asta pentru toate masiniile
+// asa ca in loc sa creeam un tip nou, marcam campul cu "?" (optional/nullable)
+
+type Masina = {
+  manufacturer: string;
+  model: string;
+  horsePower: number;
+  color?: string; // campul optional
+};
+
+const masina2: Masina = {
+  manufacturer: 'BMW',
+  model: 'Seria 7',
+  horsePower: 350,
+  // merge si fara campul optional (culoare)
+};
