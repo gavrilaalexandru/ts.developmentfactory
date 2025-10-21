@@ -123,3 +123,29 @@ function displayPerson2(person: {
 }
 
 displayPerson2(person2);
+
+// * ALIASURI
+
+type Masina = {
+  // type alias pt structura masina
+  manufacturer: string;
+  model: string;
+  horsePower: number;
+}; // cand se declara tipul folosim majuscula
+// am creat tipul custom "Masina"
+
+const masina1: Masina = {
+  manufacturer: 'Audi',
+  model: 'Q8',
+  horsePower: 300,
+};
+
+// console.log(masina1);
+
+function displayCar(masina: Masina) {
+  console.log(
+    `Modelul masinii este ${masina.manufacturer} ${masina.model} si are ${masina.horsePower} cai putere.`
+  );
+}
+
+displayCar(masina1);
