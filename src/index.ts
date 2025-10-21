@@ -284,3 +284,51 @@ function startEngine(fuel: Fuel) {
 startEngine(Fuel.GASOLINE);
 startEngine(Fuel.DIESEL);
 startEngine(Fuel.LPG);
+
+// * GENERICS
+
+class Programmer<T extends ProgrammingLanguage> {
+  private language: T;
+  constructor(language: T) {
+    this.language = language;
+  }
+
+  canCode(language: T): boolean {
+    return language === this.language;
+  }
+}
+
+// const bogdan = new Programmer<string>('CSharp');
+// console.log('Bogdan can code c#: ' + bogdan.canCode('CSharp'));
+
+enum ProgrammingLanguage {
+  csharp,
+  javascript,
+  typescript,
+}
+
+const alex = new Programmer<ProgrammingLanguage>(
+  ProgrammingLanguage.javascript
+);
+console.log(
+  'Alex can code js: ' + alex.canCode(ProgrammingLanguage.javascript)
+);
+console.log('Alex can code c#: ' + alex.canCode(ProgrammingLanguage.csharp));
+
+// const ovidiu = new Programmer<number>(4); // nu are niciun sens, trebuie prevenit in clasa deoarece nu este gandita in acest fel
+
+type Language = {
+  name: string;
+};
+
+const csharp: Language = {
+  name: 'C#',
+};
+
+const js: Language = {
+  name: 'JS',
+};
+
+const ts: Language = {
+  name: 'TS',
+};
